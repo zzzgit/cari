@@ -1,0 +1,17 @@
+[
+    {
+        "name": "有道",
+        "file": "YoudaoDictionary",
+        "value": "youd.en.han"
+    },
+    {
+        "name": "Bing",
+        "file": "BingDictionary",
+        "value": "bing.en.han"
+    },
+    {
+        "name": "Dict",
+        "file": "DictDictionary",
+        "value": "dict.en.han"
+    }
+]
