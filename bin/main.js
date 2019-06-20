@@ -5,6 +5,10 @@ const path = require("path")
 const yargs = require("yargs")
 const configure = require("./configure")
 const Factory = require("./Factory")
+const updateNotifier = require('update-notifier')
+
+const pkg = require('../package.json')
+updateNotifier({pkg, updateCheckInterval: 1000 * 1}).notify()
 
 const house = path.resolve(os.homedir(), ".cari")
 
@@ -19,9 +23,9 @@ yargs.usage('usage: $0 <cmd>')
 			return null
 		}
 		let key
-		try{
-			key = fs.readFileSync(path.resolve(house, "config"), { encoding: "utf8" })
-		}catch(e){
+		try {
+			key = fs.readFileSync(path.resolve(house, "config"), {encoding: "utf8"})
+		} catch (e) {
 			return configure()
 		}
 		const dict = Factory.getDictionary(key)

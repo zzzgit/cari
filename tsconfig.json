@@ -11,3 +11,4 @@
         "preserveWatchOutput": true
     }
 }
+// 最初是靠全局的tsc工具來進行開發和編譯
