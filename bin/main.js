@@ -24,6 +24,7 @@ yargs.usage('usage: $0 <cmd>')
 		}
 		let key
 		try {
+			// eslint-disable-next-line security/detect-non-literal-fs-filename
 			key = fs.readFileSync(path.resolve(house, "config"), {encoding: "utf8"})
 		} catch (e) {
 			return configure()
