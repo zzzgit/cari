@@ -14,7 +14,7 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "cheerio": "^1.0.0-rc.2",
-    "inquirer": "^6.2.0",
+    "inquirer": "^13.0.1",
     "mkdirp": "^0.5.1",
     "samael": "^1.0.2",
     "update-notifier": "^6.0.2",
