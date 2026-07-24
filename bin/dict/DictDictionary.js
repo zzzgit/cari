@@ -1,15 +1,13 @@
-const cheerio = require('cheerio')
-const samael = require("samael")
-const chalk = require('chalk')
-import Dictionary from "../Dictionary"
+import { load } from 'cheerio'
+import chalk from 'chalk'
 
-class DictDictionary implements Dictionary {
-	url_tmpl: string = "http://dict.cn/{key_s}"
+class DictDictionary {
+	url_tmpl = "http://dict.cn/{key_s}"
 
-	lookup(word_s: string): string {
+	lookup(word_s) {
 		const url_s = this.url_tmpl.replace("{key_s}", word_s)
-		return samael.fetch(url_s).then((text) => {
-			const $ = cheerio.load(text)
+		return fetch(url_s).then((res) => res.text()).then((text) => {
+			const $ = load(text)
 			const container = $("#content > div.main > div.word > div.basic.clearfix > ul")
 			if (!container.length) {
 				return null // no data

@@ -5,13 +5,13 @@
         "value": "youd.en.han"
     },
     {
-        "name": "Bing",
-        "file": "BingDictionary",
-        "value": "bing.en.han"
-    },
-    {
         "name": "Dict",
         "file": "DictDictionary",
         "value": "dict.en.han"
+    },
+    {
+        "name": "AHD",
+        "file": "AhdDictionary",
+        "value": "ahd.en.en"
     }
 ]
