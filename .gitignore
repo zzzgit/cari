@@ -12,4 +12,7 @@ bin/**/*.js
 !/bin/main.js
 !/bin/configure.js
 !/bin/dict.js
+!/bin/Dictionary.js
+!/bin/Factory.js
+!/bin/dict/*.js
 
