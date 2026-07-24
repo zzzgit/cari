@@ -8,13 +8,13 @@ class DictDictionary implements Dictionary {
 
 	lookup(word_s: string): string {
 		const url_s = this.url_tmpl.replace("{key_s}", word_s)
-		return samael.fetch(url_s).then((text) => {
+		return samael.fetch(url_s).then((text: string) => {
 			const $ = cheerio.load(text)
 			const container = $("#content > div.main > div.word > div.basic.clearfix > ul")
 			if (!container.length) {
 				return null // no data
 			}
-			return container.children().each((index, li) => {
+			return container.children().each((index: any, li: any) => {
 				const item = $(li)
 				const kelas = item.children("span").text()
 				const description = item.children("strong").text()

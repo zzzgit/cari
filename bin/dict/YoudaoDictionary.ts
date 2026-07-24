@@ -7,13 +7,13 @@ class YoudaoDictionary implements Dictionary {
 
 	lookup(word_s: string): string {
 		const url_s = this.url_tmpl.replace("{key_s}", word_s)
-		return samael.fetch(url_s).then((text) => {
+		return samael.fetch(url_s).then((text: string) => {
 			const $ = cheerio.load(text)
 			const container = $("#phrsListTab > div > ul")
 			if (!container.length) {
 				return null // no data
 			}
-			return container.children().each((index, li) => {
+			return container.children().each((index: any, li: any) => {
 				console.log($(li).text())
 			})
 		})
